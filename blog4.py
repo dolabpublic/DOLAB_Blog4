@@ -44,7 +44,7 @@ def draw_text_on_image(img_draw, count_yellow, count_orange):
     return img_draw
 
 def main():
-    path_img = '/workdir/siri/medium/Blog#4/images/IMG_2688.jpg'
+    path_img = '/workdir/Documents/DOLAB/Medium/Blog#4/images/IMG_2686.jpg'
     img = load_image(path_img)
     img = cv2.resize(img, None,fx=0.5,fy=0.5)
     hsv = bgr2hsv(img)
@@ -68,9 +68,10 @@ def main():
     img_draw, count_orange = filter_contours_img(contours, img_draw, color_bbox)
 
     img_draw = draw_text_on_image(img_draw, count_yellow, count_orange)
-
-    cv2.imwrite('/workdir/siri/medium/Blog#4/output/output.png', img_draw)
     print('Orange Count:', count_orange)
+
+    cv2.imwrite('/workdir/Documents/DOLAB/Medium/Blog#4/output/output_IMG_2686.png', img_draw)
+    
 
 
 if __name__ == '__main__':
